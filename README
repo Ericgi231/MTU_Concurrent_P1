@@ -1,0 +1,60 @@
+Question 1:
+
+0 -> 1 -> 2 -> 3
+
+4 Processes are created in total.
+Process 0 starts, then within the loop the fork is ran.
+Everyime fork is ran the parent process breaks out, prints, and sleeps.
+The new child stays in the loop and repeats what happened to the original 0 process.
+With a param of 4, 3 children will be made because 1 starts at 1
+The final child process will exit the loop naturally and print then sleep.
+
+Question 2:
+
+  1  2  3  4
+  ^  ^  ^  ^
+0-|--|--|--|
+
+5 Processes are created in total.
+Process 0 starts, then within the loop fork is ran.
+Everyime fork is ran the child process breaks out, prints, and sleeps.
+Process 0 remains in the loop and continues to print children until it exits naturally and prints then sleeps.
+With a param of 4, 4 children will be made because i starts at 0
+
+Question 3:
+  
+       -> 4
+       |
+  -> 1 -> 5 -> 7
+  |
+0--> 2 -> 6
+  |
+  -> 3
+
+8 Processes are created in total.
+Process 0 starts, fork is ran with every loop.
+Each time fork is ran no process exits the loop,
+instead all processes will naturally leave the loop after 3 runs.
+Because process 0 exists for all three loops, it makes 3 children.
+0's first child only exists for two loops, so it makes 2 children.
+0's second child and 1's first child both exist for one loop, so they each make 1 child.
+The loop ends and all processes print and sleep.
+
+Question 4:
+
+The distrobution found in the ball problem is a standard normal distribution.
+
+A normal distribution is by definition a cymetrical distribution of data
+where the data points on each side of the curves max is approx equal.
+It also means that the data points in the middle are the largest
+and as the data travels out towards the ends of the distrobution it becomes less and less.
+
+The ball problem essentially tests the odds of different outcomes occurring.
+Because each peg has a 50/50 chance to send the ball in either direction 
+The middle most bin(s) represent an equal number of 50/50s going each way,
+which is why they are the most likely outcomes.
+As you get further from the middle bins, more 50/50s in the same direction are required.
+The outermost bins require that all 50/50s go the same way.
+
+Realisticly by running the simulation a large number of times,
+each bin will represent the odds of a certain number of 50/50s going certain ways.
